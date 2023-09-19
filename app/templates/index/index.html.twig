@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TimeTracker{% endblock %}
+
+{% block body %}
+
+<link href="{{ asset("css/index.css") }}" rel="stylesheet"/>
+<script src="{{ asset('js/timer.js') }}"></script>
+
+<div class="container">
+    <div class="row wrapp">
+        <div class="col disappear"></div>
+        <div class="col-4 text-center main-col">
+            <div class="row">
+                <div class="col-12">
+                    <input id="eventName" type="text" placeholder="Introduce un título"></input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 currentTime">
+                    <span id="hours">00</span>
+                    <span>:</span>
+                    <span id="minutes">00</span>
+                    <span>:</span>
+                    <span id="seconds">00</span>
+                </div>
+            </div>
+            <div class="row space-up">
+                <div class="col">
+                    <button class="btn btn-primary" id="startTimer">Start</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-danger" id="stopTimer">Stop</button>
+                </div>
+            </div>
+            <div class="row tasksgrid">
+                {{ tasksgrid | raw }}
+            </div>
+        </div>
+        <div class="col disappear"></div>
+    </div>
+</div>
+{% endblock %}
